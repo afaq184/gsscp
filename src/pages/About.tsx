@@ -1,7 +1,7 @@
 import { Eye, Target, Award, BookOpen, Landmark, ExternalLink } from 'lucide-react';
 import { SITE } from '../site';
 
-const principalImage = `${import.meta.env.BASE_URL}principal.png`;
+const principalImage = `${import.meta.env.BASE_URL}principalnew.png`;
 const aboutCampusImage = `${import.meta.env.BASE_URL}about-campus.png`;
 
 export default function About() {

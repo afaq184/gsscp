@@ -6,7 +6,7 @@ import { SITE } from '../site';
 
 /** Campus banner — file lives in `public/hero-campus.png` (Vite serves from site root). */
 const heroImage = `${import.meta.env.BASE_URL}hero-campus.png`;
-const principalImage = `${import.meta.env.BASE_URL}principal.png`;
+const principalImage = `${import.meta.env.BASE_URL}principalnew.png`;
 
 export default function Home() {
   return (
