@@ -7,7 +7,7 @@ export const SITE = {
     'A leading public sector college near historic Wazir Bagh: intermediate, degree, and BS programmes affiliated with the University of Peshawar.',
   established: 1962,
   campusSince: 1972,
-  principal: 'Prof. Dr. Mohammad Ismail Khan',
+  principal: 'Dr. Muhamad Ishaq',
   addressLine: 'Daura Road, Near Wazir Bagh',
   city: 'Peshawar, Khyber Pakhtunkhwa, Pakistan',
   phone: '091-2563067',
