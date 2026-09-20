@@ -10,6 +10,8 @@ import About from './pages/About';
 import Academics from './pages/Academics';
 import Admissions from './pages/Admissions';
 import Faculty from './pages/Faculty';
+import DepartmentFaculty from './pages/DepartmentFaculty';
+import FacultyProfile from './pages/FacultyProfile';
 import Gallery from './pages/Gallery';
 import Contact from './pages/Contact';
 import News from './pages/News';
@@ -25,6 +27,8 @@ const router = createHashRouter([
       { path: 'academics', element: <Academics /> },
       { path: 'admissions', element: <Admissions /> },
       { path: 'faculty', element: <Faculty /> },
+      { path: 'departments/:deptId/faculty', element: <DepartmentFaculty /> },
+      { path: 'faculty-profile/:memberId', element: <FacultyProfile /> },
       { path: 'gallery', element: <Gallery /> },
       { path: 'contact', element: <Contact /> },
       { path: 'news', element: <News /> },

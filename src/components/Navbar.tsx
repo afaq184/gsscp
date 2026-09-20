@@ -15,6 +15,18 @@ const navLinks = [
   { name: 'Contact', path: '/contact' },
 ];
 
+function isActivePath(pathname: string, path: string) {
+  if (path === '/') return pathname === '/';
+  if (path === '/faculty') {
+    return (
+      pathname === '/faculty' ||
+      pathname.startsWith('/departments/') ||
+      pathname.startsWith('/faculty-profile/')
+    );
+  }
+  return pathname === path || pathname.startsWith(`${path}/`);
+}
+
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const location = useLocation();
@@ -35,20 +47,23 @@ export default function Navbar() {
           </div>
 
           <div className="hidden md:flex items-center space-x-8">
-            {navLinks.map((link) => (
+            {navLinks.map((link) => {
+              const active = isActivePath(location.pathname, link.path);
+              return (
               <Link
                 key={link.path}
                 to={link.path}
-                className={`nav-link group ${location.pathname === link.path ? 'active' : ''}`}
+                className={`nav-link group ${active ? 'active' : ''}`}
               >
                 {link.name}
                 <span
                   className={`absolute bottom-0 left-0 w-full h-0.5 bg-white transform origin-left transition-transform duration-300 ${
-                    location.pathname === link.path ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
+                    active ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'
                   }`}
                 />
               </Link>
-            ))}
+              );
+            })}
             <a
               href={SITE.hedAdmissionUrl}
               target="_blank"
@@ -70,20 +85,23 @@ export default function Navbar() {
       {isOpen && (
         <div className="md:hidden bg-navbar-bg border-b border-white/10 animate-in slide-in-from-top duration-300">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            {navLinks.map((link) => (
+            {navLinks.map((link) => {
+              const active = isActivePath(location.pathname, link.path);
+              return (
               <Link
                 key={link.path}
                 to={link.path}
                 onClick={() => setIsOpen(false)}
                 className={`block px-3 py-2 rounded-md text-base font-medium ${
-                  location.pathname === link.path
+                  active
                     ? 'text-white bg-white/10'
                     : 'text-white/80 hover:text-white hover:bg-white/5'
                 }`}
               >
                 {link.name}
               </Link>
-            ))}
+              );
+            })}
             <a
               href={SITE.hedAdmissionUrl}
               target="_blank"
